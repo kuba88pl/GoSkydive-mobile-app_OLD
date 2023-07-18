@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#FFEB3B</color>
+    <color name="sign_in_btn_color">#68A2ED</color>
+    <color name="sign_up_btn_color">#FF0000</color>
+    <color name="sign_up_btn_text_color">#FFFFFF</color>
+    <color name="secondary_color">#FAAE2B</color>
+
+
+</resources>
