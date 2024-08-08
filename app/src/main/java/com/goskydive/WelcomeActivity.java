@@ -1,2 +1,4 @@
-package com.goskydive;public class WelcomeActivity {
+package com.goskydive;
+
+public class WelcomeActivity {
 }
