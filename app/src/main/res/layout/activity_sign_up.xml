@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/signUpLogo"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:background="@color/sign_up_btn_text_color"
@@ -57,27 +57,27 @@
         android:padding="5dp"
         android:textAlignment="center" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/signUpBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-         android:layout_marginTop="20dp"
-        android:padding="15dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/sign_up_btn_color"
-        android:text="Sign Up"
-        android:textColor="@color/sign_up_btn_text_color"/>
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/signUpBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/password"-->
+<!--         android:layout_marginTop="20dp"-->
+<!--        android:padding="15dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:backgroundTint="@color/sign_up_btn_color"-->
+<!--        android:text="Sign Up"-->
+<!--        android:textColor="@color/sign_up_btn_text_color"/>-->
 
 
-    <ImageButton
-        android:id="@+id/fbsignupbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/fbsignup"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/signUpLogo"
-        android:layout_marginTop="370dp" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/fbsignupbutton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/fbsignup"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_below="@id/signUpLogo"-->
+<!--        android:layout_marginTop="370dp" />-->
 
     <ImageButton
         android:id="@+id/googlesignupbutton"
@@ -85,15 +85,15 @@
         android:layout_height="wrap_content"
         android:background="@drawable/googlesignup"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/fbsignupbutton"
-        android:layout_marginTop="30dp" />
+        android:layout_below="@id/password"
+        android:layout_marginTop="50dp" />
 
-    <ImageButton
-        android:id="@+id/applesignupbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/applesignup"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/googlesignupbutton"
-        android:layout_marginTop="30dp" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/applesignupbutton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/applesignup"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_below="@id/googlesignupbutton"-->
+<!--        android:layout_marginTop="30dp" />-->
 </RelativeLayout>
