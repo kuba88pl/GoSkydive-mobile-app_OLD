@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776427995625",
+    "project_id": "goskydive-ba870",
+    "storage_bucket": "goskydive-ba870.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776427995625:android:6a85800f7011b5df6b8b78",
+        "android_client_info": {
+          "package_name": "com.goskydive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs11IJgzOgfMmJLQIaK88cL5rVIUlI_E8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
