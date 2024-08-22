@@ -2,5 +2,6 @@
     <string name="app_name">GoSkydive!</string>
     <string name="allready_registered">Do you have an account? Tap here!</string>
     <string name="no_registered">Don\'t have an account? Create now!</string>
-    <string name="create_account_text">Create your free account!</string>
+    <string name="create_account_text">Join to the skydivers community!</string>
+    <string name="just_sign_in">...just sign in!</string>
 </resources>
