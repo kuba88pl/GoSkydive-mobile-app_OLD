@@ -30,6 +30,7 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
+    public static final String TAG = "TAG";
     EditText username, email, password;
     ImageButton signUpButton;
     TextView alreadyRegistered;
@@ -39,7 +40,7 @@ public class Register extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) throws RuntimeException {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
@@ -94,20 +95,21 @@ public class Register extends AppCompatActivity {
                         userID = fAuth.getCurrentUser().getUid();
                         DocumentReference documentReference = fStore.collection("users").document(userID);
                         Map<String, Object> user = new HashMap<>();
-                        user.put("userName", username);
-                        user.put("email", email);
+                        user.put("userName", usernameText);
+                        user.put("email", emailtext);
+
 
                         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-
-                            public static final String TAG = "TAG";
-
                             @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d(TAG, "onSucces user profile is created for " + userID);
+                            public void onSuccess(Void unused) {
+                                Log.d(TAG, "onSuccess: user Profile is created for " + userID);
 
                             }
                         });
+
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+
                     } else {
                         Toast.makeText(Register.this, "Error! Try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
