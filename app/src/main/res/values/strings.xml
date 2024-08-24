@@ -5,4 +5,7 @@
     <string name="create_account_text">Join to the skydivers community!</string>
     <string name="just_sign_in">...just sign in!</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="your_profile">Your Profile</string>
+    <string name="your_name">Your name: </string>
+    <string name="your_email">Your email: </string>
 </resources>

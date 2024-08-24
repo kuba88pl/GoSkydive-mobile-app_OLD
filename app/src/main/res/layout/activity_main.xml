@@ -36,15 +36,16 @@
         android:layout_marginBottom="60dp"
         app:srcCompat="@drawable/baseline_add_64" />
 
-    ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="225dp"
-        android:layout_height="290dp"
+    <ImageButton
+        android:id="@+id/person_link_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/addjump"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="351dp"
-        app:srcCompat="@drawable/wheatertest" />
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="355dp"
+        app:srcCompat="@drawable/baseline_person_24" />
+
+
 
 </RelativeLayout>
