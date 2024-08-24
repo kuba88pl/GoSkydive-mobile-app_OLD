@@ -4,4 +4,5 @@
     <string name="no_registered">Don\'t have an account? Create now!</string>
     <string name="create_account_text">Join to the skydivers community!</string>
     <string name="just_sign_in">...just sign in!</string>
+    <string name="forgot_password">Forgot password?</string>
 </resources>

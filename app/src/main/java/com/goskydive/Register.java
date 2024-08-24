@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Register extends AppCompatActivity {
 
     EditText username, email, password;
-    ImageButton signup_button;
+    ImageButton signUpButton;
     TextView alreadyRegistered;
     FirebaseAuth fAuth;
 
@@ -43,7 +43,7 @@ public class Register extends AppCompatActivity {
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        signup_button = findViewById(R.id.googlesignupbutton);
+        signUpButton = findViewById(R.id.googlesignupbutton);
         alreadyRegistered = findViewById(R.id.allready_registred_text);
 
         fAuth = FirebaseAuth.getInstance();
@@ -55,7 +55,7 @@ public class Register extends AppCompatActivity {
             finish();
         }
 
-        signup_button.setOnClickListener(new View.OnClickListener() {
+        signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String emailtext = email.getText().toString().trim();
@@ -86,7 +86,13 @@ public class Register extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
 
+        alreadyRegistered.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
     }
