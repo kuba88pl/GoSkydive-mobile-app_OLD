@@ -12,18 +12,15 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.goskydive.introduction.Step1;
 
 import java.util.HashMap;
 import java.util.Map;
-import com.goskydive.introduction.*;
 
 public class Register extends AppCompatActivity {
 
@@ -41,11 +38,11 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.googlesignupbutton), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.googlesignupbutton), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
 
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);

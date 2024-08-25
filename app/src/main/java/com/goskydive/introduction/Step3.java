@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import  com.goskydive.introduction.*;
 
 import com.goskydive.R;
 
@@ -23,11 +24,6 @@ public class Step3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_step3);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
 
         nextButton = findViewById(R.id.next_button);
 
