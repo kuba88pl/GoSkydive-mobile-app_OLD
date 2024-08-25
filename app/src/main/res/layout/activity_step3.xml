@@ -28,18 +28,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="@string/welceome"
-        android:textSize="30sp"
         android:textColor="@color/black"
+        android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/how_many_jumps"
+        android:id="@+id/licence_type"
         android:layout_width="326dp"
         android:layout_height="49dp"
-        android:text="@string/how_many_jumps"
+        android:text="@string/licence_type"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -48,20 +48,47 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step1_welcome"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintVertical_bias="0.266" />
 
     <EditText
-        android:id="@+id/how_many_jumps_edit_text"
+        android:id="@+id/editTextText"
+        android:layout_width="204dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="for example B"
+        android:inputType="text"
+        android:text=""
+        android:textColor="@color/cardview_light_background"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/licence_type" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="179dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="92dp"
+        android:text="USPA (or equivalent)"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/licence_type" />
+
+    <Switch
+        android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:hint="type number of jumps"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/iam_student"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/how_many_jumps" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

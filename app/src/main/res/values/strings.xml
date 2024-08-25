@@ -11,7 +11,12 @@
     <string name="your_age">Age: </string>
     <string name="licence">Licence: </string>
     <string name="total_jumps">Total jumps: </string>
-    <string name="prefered_jump_style">Prefered jump style: </string>
+    <string name="prefered_jump_style">The main type of jumps you do is? Choose just one!</string>
     <string name="welceome">Welcome!</string>
     <string name="introduction">We need some information to better understand your competences and needs. Don\'t worry, it only takes a moment!</string>
+    <string name="how_many_jumps">How many jumps do you have? If you have never jumped, enter 0</string>
+    <string name="licence_type">What licence do you have?</string>
+    <string name="iam_student">I am student</string>
+    <string name="choose_dropzone_text">Choose a drop zone where you jump most often. This will make it easier to provide weather data for you!</string>
+    <string name="thats_all">Thank you for your time! You can now use GoSkydive! Happy safe jumping!</string>
 </resources>

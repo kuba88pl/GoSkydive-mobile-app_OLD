@@ -36,32 +36,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/how_many_jumps"
-        android:layout_width="326dp"
-        android:layout_height="49dp"
-        android:text="@string/how_many_jumps"
+        android:id="@+id/thatsall"
+        android:layout_width="340dp"
+        android:layout_height="98dp"
+        android:text="@string/thats_all"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step1_welcome"
-        app:layout_constraintVertical_bias="0.352" />
-
-    <EditText
-        android:id="@+id/how_many_jumps_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:hint="type number of jumps"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/how_many_jumps" />
+        app:layout_constraintVertical_bias="0.536" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
