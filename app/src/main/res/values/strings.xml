@@ -6,6 +6,12 @@
     <string name="just_sign_in">...just sign in!</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="your_profile">Your Profile</string>
-    <string name="your_name">Your name: </string>
-    <string name="your_email">Your email: </string>
+    <string name="your_name">user name</string>
+    <string name="your_email">user email</string>
+    <string name="your_age">Age: </string>
+    <string name="licence">Licence: </string>
+    <string name="total_jumps">Total jumps: </string>
+    <string name="prefered_jump_style">Prefered jump style: </string>
+    <string name="welceome">Welcome!</string>
+    <string name="introduction">We need some information to better understand your competences and needs. Don\'t worry, it only takes a moment!</string>
 </resources>

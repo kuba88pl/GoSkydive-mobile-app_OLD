@@ -8,6 +8,7 @@
     android:background="@color/primary_color"
     tools:context=".introduction.Step1">
 
+
     <ImageView
         android:id="@+id/signUpLogo"
         android:layout_width="260dp"
@@ -15,10 +16,8 @@
         android:background="@drawable/logo"
         app:layout_constraintBottom_toTopOf="@+id/introduction"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step1_welcome"
-        app:layout_constraintVertical_bias="0.406" />
+        app:layout_constraintTop_toBottomOf="@+id/step1_welcome" />
 
     <Button
         android:id="@+id/next_button"
@@ -39,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="@string/welceome"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:textColor="@color/black"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,13 +53,12 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step1_welcome"
-        app:layout_constraintVertical_bias="0.755" />
+        app:layout_constraintVertical_bias="0.588" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

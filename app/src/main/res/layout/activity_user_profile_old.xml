@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    android:padding="20dp"
+    tools:context=".UserProfile">
+
+    <ImageView
+        android:id="@+id/signUpLogo"
+        android:layout_width="143dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="330dp"
+        app:srcCompat="@drawable/baseline_menu_64" />
+    <TextView
+        android:id="@+id/your_profile_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signUpLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:includeFontPadding="true"
+        android:text="@string/your_profile"
+        android:textColor="#090909"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="167dp"
+        android:layout_height="156dp"
+        android:layout_below="@+id/your_profile_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="224dp"
+        app:srcCompat="@drawable/baseline_person_24"
+        tools:srcCompat="@drawable/baseline_person_24" />
+
+    <TextView
+        android:id="@+id/your_name_text"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/your_profile_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="75dp"
+        android:includeFontPadding="true"
+        android:text="@string/your_name"
+        android:textColor="#090909"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/your_email_text"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="61dp"
+        android:includeFontPadding="true"
+        android:text="@string/your_email"
+        android:textColor="#090909"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/your_age"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/your_email_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="137dp"
+        android:includeFontPadding="true"
+        android:text="@string/your_age"
+        android:textColor="#090909"
+        android:textSize="20sp" />
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/logout_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginEnd="18dp"-->
+<!--        android:layout_marginBottom="14dp"-->
+<!--        app:srcCompat="@drawable/baseline_logout_24" />-->
+
+    <TextView
+        android:id="@+id/number_of_jumps_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/total_jumps"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/licence_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number_of_jumps_text"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/licence"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/prefered_jump_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/licence_type"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/prefered_jump_style"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+</RelativeLayout>

@@ -11,22 +11,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import com.goskydive.introduction.*;
 
 public class Register extends AppCompatActivity {
 
@@ -61,10 +58,7 @@ public class Register extends AppCompatActivity {
 
         //Checking is user sign in
 
-        if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
+
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +101,7 @@ public class Register extends AppCompatActivity {
                             }
                         });
 
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Step1.class));
 
 
                     } else {
@@ -121,5 +115,10 @@ public class Register extends AppCompatActivity {
         {
             startActivity(new Intent(getApplicationContext(), Login.class));
         });
+
+        if (fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
     }
 }
