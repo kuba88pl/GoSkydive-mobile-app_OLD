@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.266" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/licence_type_input_text"
         android:layout_width="204dp"
         android:layout_height="55dp"
         android:layout_marginTop="80dp"
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/licence_type" />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/is_student_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"

@@ -25,8 +25,6 @@ public class UserProfile extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +33,6 @@ public class UserProfile extends AppCompatActivity {
 
         name = findViewById(R.id.your_name_text);
         email = findViewById(R.id.your_email_text);
-
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
@@ -52,8 +49,6 @@ public class UserProfile extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     public void logout(View view) {

@@ -38,11 +38,6 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.googlesignupbutton), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
 
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
@@ -54,8 +49,6 @@ public class Register extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
         //Checking is user sign in
-
-
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +92,6 @@ public class Register extends AppCompatActivity {
                         });
 
                         startActivity(new Intent(getApplicationContext(), Step1.class));
-
 
                     } else {
                         Toast.makeText(Register.this, "Error! Try again!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
