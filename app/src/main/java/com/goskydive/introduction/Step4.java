@@ -57,16 +57,13 @@ public class Step4 extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                List<Switch> switches = Arrays.asList(solo, rw, free, crw, tandem);
 
-                for (Switch switchState : switches) {
-                    if (switchState.isChecked() == true) {
                         preferredTypeOfJumpMap.put("solo", solo.isChecked());
                         preferredTypeOfJumpMap.put("rw", rw.isChecked());
                         preferredTypeOfJumpMap.put("free", free.isChecked());
                         preferredTypeOfJumpMap.put("crw", crw.isChecked());
                         preferredTypeOfJumpMap.put("tandem", tandem.isChecked());
-                    }
+
 
                     userID = fAuth.getCurrentUser().getUid();
                     DocumentReference prefReference = fStore.collection("preferredJumpType").document(userID);
@@ -79,7 +76,7 @@ public class Step4 extends AppCompatActivity {
                             Log.d(TAG, "map added");
                         }
                     });
-                }
+
                 startActivity(new Intent(getApplicationContext(), Step5.class));
 
             }

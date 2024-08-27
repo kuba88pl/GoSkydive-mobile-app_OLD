@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.goskydive.introduction.*;
+import com.goskydive.Register.*;
 
 import com.goskydive.R;
 
@@ -28,6 +28,7 @@ import org.w3c.dom.Document;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Step3 extends AppCompatActivity {
 
     Button nextButton;
@@ -35,7 +36,6 @@ public class Step3 extends AppCompatActivity {
     Switch isStudentSwitch;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    boolean isStudent = false;
     String userID;
 
     @Override
@@ -50,6 +50,8 @@ public class Step3 extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
+        Map<String, Boolean> isStudentState = new HashMap<>();
+        
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,19 +73,17 @@ public class Step3 extends AppCompatActivity {
                             Log.d(TAG, "Licence was stored!");
                         }
                     });
-//TODO
-//                    userID = fAuth.getCurrentUser().getUid();
-//                    DocumentReference documentReference1 = fStore.collection("isStudent").document(userID);
-//                    Map<String, Boolean> isStudentState = new HashMap<>();
-//                    isStudent = isStudentSwitch.isChecked();
-//                    isStudentState.put("isStudent", isStudent);
-//                    documentReference1.set(isStudent).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                            @Override
-//                            public void onSuccess(Void unused) {
-//                                Log.d("TAG", "Student update");
-//                            }
-//                        });
 
+                    DocumentReference isStudentStateReference = fStore.collection("isStudent").document(userID);
+                    isStudentState.put("isStudent", isStudentSwitch.isChecked());
+                    isStudentStateReference.set(isStudentState).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        public static final String TAG = "TAG";
+
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Log.d(TAG, "Student state updated");
+                        }
+                    });
 
 
                 }
