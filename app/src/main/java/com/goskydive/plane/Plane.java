@@ -1,2 +1,4 @@
-package com.goskydive.plane;public class Plane {
+package com.goskydive.plane;
+
+public class Plane {
 }

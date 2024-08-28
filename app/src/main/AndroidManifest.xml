@@ -16,6 +16,12 @@
         android:theme="@style/Theme.GoSkydive"
         tools:targetApi="31">
         <activity
+            android:name=".logbook.AddJumpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".logbook.loogBook"
+            android:exported="false" />
+        <activity
             android:name=".introduction.Step6"
             android:exported="true" />
         <activity

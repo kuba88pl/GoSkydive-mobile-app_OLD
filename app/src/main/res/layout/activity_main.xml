@@ -23,8 +23,8 @@
         android:layout_marginLeft="330dp"
         app:srcCompat="@drawable/baseline_menu_64" />
 
-    <ImageView
-        android:id="@+id/addjump"
+    <ImageButton
+        android:id="@+id/add_jump"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -41,7 +41,7 @@
         android:id="@+id/person_link_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/addjump"
+        android:layout_above="@+id/add_jump"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="355dp"

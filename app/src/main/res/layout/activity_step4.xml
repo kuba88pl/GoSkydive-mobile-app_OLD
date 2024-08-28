@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_color"
-    tools:context=".introduction.Step1">
+    tools:context=".introduction.Step1"
+    >
 
 
     <Button
@@ -48,24 +49,25 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step1_welcome"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.172"
+        />
 
     <Switch
         android:id="@+id/solo_type_switch"
-        android:layout_width="131dp"
-        android:layout_height="44dp"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
         android:layout_marginTop="28dp"
         android:text="Solo"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintTop_toBottomOf="@+id/prefered_jumps_text" />
 
     <Switch
         android:id="@+id/relative_type_switch"
-        android:layout_width="178dp"
-        android:layout_height="40dp"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
         android:layout_marginTop="36dp"
         android:text="Relative Work"
         android:textSize="20dp"
@@ -76,37 +78,37 @@
 
     <Switch
         android:id="@+id/free_type_switch"
-        android:layout_width="138dp"
-        android:layout_height="31dp"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
         android:layout_marginTop="36dp"
         android:text="Free"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relative_type_switch" />
 
     <Switch
         android:id="@+id/crw_type_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="40dp"
         android:text="CRW"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/free_type_switch" />
 
     <Switch
         android:id="@+id/tandem_type_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="246dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="40dp"
         android:text="Tandem"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/crw_type_switch" />
 
