@@ -1,0 +1,382 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/primary_color"-->
+<!--    tools:context=".logbook.AddJumpActivity">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/cutaway_yes"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="NO"-->
+<!--        android:textColor="#4CAF50"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/cutaway_switch"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/cutaway_yes"-->
+<!--        tools:layout_editor_absoluteY="706dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/cutaway_yes"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="YES"-->
+<!--        android:textColor="@color/sign_up_btn_color"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/cutaway_switch"-->
+<!--        tools:layout_editor_absoluteY="706dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:text="Free"-->
+<!--        tools:layout_editor_absoluteX="265dp"-->
+<!--        tools:layout_editor_absoluteY="322dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:text="Free"-->
+<!--        tools:layout_editor_absoluteX="265dp"-->
+<!--        tools:layout_editor_absoluteY="322dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:text="CRW"-->
+<!--        tools:layout_editor_absoluteX="331dp"-->
+<!--        tools:layout_editor_absoluteY="322dp" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/addjump"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@drawable/circle_button"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.887"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:srcCompat="@drawable/baseline_add_64" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/signUpLogo"-->
+<!--        android:layout_width="143dp"-->
+<!--        android:layout_height="64dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@drawable/logo"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.059"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/menu"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/baseline_menu_64" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/jump_number_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="44dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Jump number"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/add_jump_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/add_jump_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="128dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:text="Add next jump!"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold|italic"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.508"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/date_of_jump_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Date of jump"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/jump_number_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/freefall_time_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Freefall time"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/height_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/main_canopy_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Main canopy"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/jump_type_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/cutaway_yes"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Cutaway"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/freefall_time_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/type_of_plane_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Plane"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/main_canopy_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/height_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Height"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/dropzone_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/comments_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Comments"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/cutaway_yes" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/jump_type_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Jump type"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/date_of_jump_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/dropzone_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:fontFamily="sans-serif-black"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:text="Dropzone"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/type_of_plane_text" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/jump_number_edit_text"-->
+<!--        android:layout_width="94dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        android:layout_marginStart="28dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="number"-->
+
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/jump_number_text"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/add_jump_text" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextDate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="40dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="date"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/date_of_jump_text"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/jump_number_edit_text" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:text="Solo"-->
+<!--        tools:layout_editor_absoluteX="133dp"-->
+<!--        tools:layout_editor_absoluteY="322dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:text="RW"-->
+<!--        tools:layout_editor_absoluteX="199dp"-->
+<!--        tools:layout_editor_absoluteY="322dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="66dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:text="+1"-->
+<!--        tools:layout_editor_absoluteX="283dp"-->
+<!--        tools:layout_editor_absoluteY="197dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="91dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:text="WINGSUIT"-->
+<!--        tools:layout_editor_absoluteX="265dp"-->
+<!--        tools:layout_editor_absoluteY="367dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button_change_date"-->
+<!--        android:layout_width="86dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:text="TANDEM"-->
+<!--        tools:layout_editor_absoluteX="179dp"-->
+<!--        tools:layout_editor_absoluteY="367dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/drop_zone_edit_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:text="Plane"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/type_of_plane_text"-->
+<!--        tools:layout_editor_absoluteY="449dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/drop_zone_edit_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.311"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/dropzone_text"-->
+<!--        tools:layout_editor_absoluteY="511dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/comments_edit_text"-->
+<!--        android:layout_width="144dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="number"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/height_text"-->
+<!--        tools:layout_editor_absoluteY="573dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/comments_edit_text"-->
+<!--        android:layout_width="144dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="number"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.513"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/freefall_time_text"-->
+<!--        tools:layout_editor_absoluteY="635dp" />-->
+
+<!--    <Switch-->
+<!--        android:id="@+id/cutaway_switch"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:layout_editor_absoluteX="236dp"-->
+<!--        tools:layout_editor_absoluteY="706dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/comments_edit_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:text="write something"-->
+<!--        tools:layout_editor_absoluteX="86dp"-->
+<!--        tools:layout_editor_absoluteY="796dp" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
