@@ -2,14 +2,18 @@ package com.goskydive;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -19,8 +23,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class UserProfile extends AppCompatActivity {
 
+
     ImageButton logoutButton;
-    TextView name, email;
+    TextView name, email, totalJumps, textview;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
@@ -33,6 +38,10 @@ public class UserProfile extends AppCompatActivity {
 
         name = findViewById(R.id.your_name_text);
         email = findViewById(R.id.your_email_text);
+        totalJumps = findViewById(R.id.total_jumps);
+
+        textview = findViewById(R.id.number_To_view);
+
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
@@ -46,11 +55,20 @@ public class UserProfile extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 name.setText(documentSnapshot.getString("userName"));
                 email.setText(documentSnapshot.getString("email"));
+            }
+        });
+
+        DocumentReference totalJumpsReference = fStore.collection("allJumps").document(userId);
+        totalJumpsReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot jumpNumberReferenceSnapshot, @Nullable FirebaseFirestoreException error) {
+                long jumpNo = jumpNumberReferenceSnapshot.getLong("allJumps");
+                textview.setText(String.valueOf(jumpNo));
 
             }
         });
-    }
 
+    }
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(), Login.class));

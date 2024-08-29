@@ -16,7 +16,8 @@ public class Jump {
     private int jumpHeight;
     private int freeFallDelay;
 
-    public Jump(int jumpNumber, Date date, Enum jumpType, Canopy usedCanopy, Plane usedPlane, String city, int jumpHeight, int freeFallDelay) {
+    public Jump(int jumpNumber, Date date, Enum jumpType, Canopy usedCanopy,
+                Plane usedPlane, String city, int jumpHeight, int freeFallDelay) {
         this.jumpNumber = jumpNumber;
         this.date = date;
         this.jumpType = jumpType;
@@ -27,8 +28,9 @@ public class Jump {
         this.freeFallDelay = freeFallDelay;
     }
 
-    public Jump() {
-    }
+
+//    public Jump() {
+//    }
 
     public int getJumpNumber() {
         return jumpNumber;
@@ -99,7 +101,9 @@ public class Jump {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Jump jump = (Jump) o;
-        return jumpNumber == jump.jumpNumber && jumpHeight == jump.jumpHeight && freeFallDelay == jump.freeFallDelay && Objects.equals(date, jump.date) && Objects.equals(jumpType, jump.jumpType) && Objects.equals(usedCanopy, jump.usedCanopy) && Objects.equals(usedPlane, jump.usedPlane) && Objects.equals(city, jump.city);
+        return jumpNumber == jump.jumpNumber && jumpHeight == jump.jumpHeight && freeFallDelay
+                == jump.freeFallDelay && Objects.equals(date, jump.date) && Objects.equals(jumpType, jump.jumpType)
+                && Objects.equals(usedCanopy, jump.usedCanopy) && Objects.equals(usedPlane, jump.usedPlane) && Objects.equals(city, jump.city);
     }
 
     @Override
