@@ -81,19 +81,6 @@
 
 
     <EditText
-        android:id="@+id/plane_edit_text"
-        android:layout_width="110dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Plane"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/freefall_time" />
-
-
-    <EditText
         android:id="@+id/editTextDate"
         android:layout_width="136dp"
         android:layout_height="41dp"
@@ -125,12 +112,12 @@
 
     <Spinner
         android:id="@+id/spinner_jump_type"
-        android:layout_width="137dp"
-        android:layout_height="28dp"
+        android:layout_width="172dp"
+        android:layout_height="39dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/jump_style"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
@@ -150,7 +137,7 @@
 
 
     <TextView
-        android:id="@+id/freefall_time"
+        android:id="@+id/freefall_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -163,6 +150,21 @@
         app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heigh_seekbar" />
+
+    <TextView
+        android:id="@+id/plane_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="508dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingStart="10dp"
+        android:text="Plane"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/jump_style"
@@ -190,6 +192,16 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/height_text" />
+
+    <Spinner
+        android:id="@+id/set_plane_spinner"
+        android:layout_width="248dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--    <ListView-->
     <!--        android:id="@+id/prefered_jump_style_list_adapter"-->

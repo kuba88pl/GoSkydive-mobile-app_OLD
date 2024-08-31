@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.goskydive.MainActivity;
 import com.goskydive.R;
 import  com.goskydive.introduction.*;
@@ -18,6 +19,7 @@ import  com.goskydive.introduction.*;
 public class Step6 extends AppCompatActivity {
 
     Button nextButton;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
