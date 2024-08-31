@@ -68,7 +68,6 @@ public class Step3 extends AppCompatActivity {
 
         });
 
-
         Map<String, Boolean> isStudentState = new HashMap<>();
 
         nextButton.setOnClickListener(new View.OnClickListener() {

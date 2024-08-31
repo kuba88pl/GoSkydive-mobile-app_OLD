@@ -1,11 +1,9 @@
 package com.goskydive.logbook;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
@@ -23,7 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.goskydive.R;
 
 import java.text.SimpleDateFormat;
@@ -54,7 +51,7 @@ public class AddJumpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_add_jump_test);
+        setContentView(R.layout.activity_add_jump);
 
         jumpNumber = findViewById(R.id.jump_number_number);
         editTextDate = findViewById(R.id.editTextDate);

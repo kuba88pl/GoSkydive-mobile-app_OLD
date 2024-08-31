@@ -58,7 +58,7 @@ public class Step5 extends AppCompatActivity {
 
                 startActivity(new Intent(getApplicationContext(), Step6.class));
 
-                DocumentReference documentReference = fStore.collection("defaultDropzne").document(userId);
+                DocumentReference documentReference = fStore.collection("userDefaultDropzone").document(userId);
                 Map<String, Object> dropzoneDefaultMap = new HashMap<>();
                 dropzoneDefaultMap.put("Dropzone", dropzone.getText().toString());
                 documentReference.set(dropzoneDefaultMap).addOnSuccessListener(new OnSuccessListener<Void>() {
