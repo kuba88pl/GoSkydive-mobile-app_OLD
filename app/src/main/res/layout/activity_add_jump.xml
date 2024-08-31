@@ -140,14 +140,14 @@
         android:id="@+id/freefall_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Freefall time"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heigh_seekbar" />
 
@@ -155,7 +155,7 @@
         android:id="@+id/plane_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="508dp"
+        android:layout_marginTop="528dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Plane"
@@ -183,13 +183,12 @@
     <SeekBar
         android:id="@+id/heigh_seekbar"
         style="@style/Widget.AppCompat.SeekBar"
-        android:layout_width="324dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="24dp"
-        android:max="4000"
-        android:progress="500"
+        android:layout_width="335dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/seekbar_background"
+        android:max="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/height_text" />
 
@@ -197,22 +196,26 @@
         android:id="@+id/set_plane_spinner"
         android:layout_width="248dp"
         android:layout_height="47dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="520dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.742"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <ListView-->
-    <!--        android:id="@+id/prefered_jump_style_list_adapter"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginTop="1dp"-->
-    <!--        android:layout_marginBottom="64dp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/seekbar_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:textStyle="italic|bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heigh_seekbar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

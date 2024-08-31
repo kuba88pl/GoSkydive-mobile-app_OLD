@@ -7,4 +7,12 @@
     <color name="sign_up_btn_color">#FF0000</color>
     <color name="sign_up_btn_text_color">#FFFFFF</color>
     <color name="secondary_color">#FAAE2B</color>
+
+    <color name="red_seek_bar">#F10000</color>
+    <color name="light_red_seek_bar">#F13939</color>
+    <color name="yellow_seek_bar">#FDE500</color>
+    <color name="light_yellow_seek_bar">#F4E55A</color>
+    <color name="light_green_seek_bar">#8AF86C</color>
+    <color name="green_seek_bar">#3CFD08</color>
+
 </resources>
