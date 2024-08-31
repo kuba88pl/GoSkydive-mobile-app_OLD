@@ -80,58 +80,35 @@ public class AddJumpActivity extends AppCompatActivity {
             }
         });
 
-
         //spinner jumpType
-        chooseJumpType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                String item = adapterView.getItemAtPosition(position).toString();
+
+        fStore.collection("jumpStyles").get().addOnSuccessListener(result -> {
+            ArrayList<String> items = new ArrayList<>();
+            for (DocumentSnapshot snapshot : result) {
+                String item = snapshot.getString("jumpStyle");
+                items.add(item);
             }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            chooseJumpType.setAdapter(adapter);
 
         });
-        ArrayList<String> jumpStyles = new ArrayList<>();
-        jumpStyles.add("SOLO");
-        jumpStyles.add("RW");
-        jumpStyles.add("FREE");
-        jumpStyles.add("CRW");
-        jumpStyles.add("TANDEM");
-
-        ArrayAdapter<String> jumpStylesSpinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, jumpStyles);
-        chooseJumpType.setAdapter(jumpStylesSpinnerAdapter);
 
         //spinner planeType
-        setPlane.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                //TODO make loading data to spinner form firestore
-//                String planeItem = adapterView.getItemAtPosition(position).toString();
+
+        fStore.collection("planes").get().addOnSuccessListener(result -> {
+            ArrayList<String> items = new ArrayList<>();
+            for (DocumentSnapshot snapshot : result) {
+                String item = snapshot.getString("plane");
+                items.add(item);
             }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            setPlane.setAdapter(adapter);
 
-            }
         });
-
-        ArrayList<String> temporaryPlanesList = new ArrayList<>();
-        temporaryPlanesList.add("Cessna 182");
-        temporaryPlanesList.add("Cessna 208 Grand Caravan");
-        temporaryPlanesList.add("de Havilland Canada DHC-6 Twin Otter");
-        temporaryPlanesList.add("Antonov AN-2");
-        temporaryPlanesList.add("Technoavia SM92 Finist");
-        temporaryPlanesList.add("Beechcraft King Air");
-        temporaryPlanesList.add("Short SC.7 Skyvan");
-        temporaryPlanesList.add("PAC P-750 XSTOL");
-        temporaryPlanesList.add("CASA C-212");
-
-        ArrayAdapter<String> planeModelsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, temporaryPlanesList);
-        setPlane.setAdapter(planeModelsAdapter);
-
 
     }
 }
