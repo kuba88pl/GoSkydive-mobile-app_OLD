@@ -58,24 +58,24 @@ public class Step4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                        preferredTypeOfJumpMap.put("solo", solo.isChecked());
-                        preferredTypeOfJumpMap.put("rw", rw.isChecked());
-                        preferredTypeOfJumpMap.put("free", free.isChecked());
-                        preferredTypeOfJumpMap.put("crw", crw.isChecked());
-                        preferredTypeOfJumpMap.put("tandem", tandem.isChecked());
+                preferredTypeOfJumpMap.put("solo", solo.isChecked());
+                preferredTypeOfJumpMap.put("rw", rw.isChecked());
+                preferredTypeOfJumpMap.put("free", free.isChecked());
+                preferredTypeOfJumpMap.put("crw", crw.isChecked());
+                preferredTypeOfJumpMap.put("tandem", tandem.isChecked());
 
 
-                    userID = fAuth.getCurrentUser().getUid();
-                    DocumentReference prefReference = fStore.collection("preferredJumpType").document(userID);
-                    prefReference.set(preferredTypeOfJumpMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                userID = fAuth.getCurrentUser().getUid();
+                DocumentReference prefReference = fStore.collection("preferredJumpType").document(userID);
+                prefReference.set(preferredTypeOfJumpMap).addOnSuccessListener(new OnSuccessListener<Void>() {
 
-                        public static final String TAG = "TAG";
+                    public static final String TAG = "TAG";
 
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Log.d(TAG, "map added");
-                        }
-                    });
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d(TAG, "map added");
+                    }
+                });
 
                 startActivity(new Intent(getApplicationContext(), Step5.class));
 

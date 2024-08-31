@@ -25,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.goskydive.R;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -71,10 +72,13 @@ public class AddJumpActivity extends AppCompatActivity {
         totalJumpsReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot jumpNumberReferenceSnapshot, @Nullable FirebaseFirestoreException error) {
-                long jumpNo = jumpNumberReferenceSnapshot.getLong("allJumps") + 1; // because this is the next jump
-                nextJumpPlusOne = jumpNo;
+                try {
+                    long jumpNo = jumpNumberReferenceSnapshot.getLong("allJumps") + 1; // because this is the next jump
+                    nextJumpPlusOne = jumpNo;
 
-                jumpNumber.setText(String.valueOf(jumpNo));
+                    jumpNumber.setText(String.valueOf(jumpNo));
+                } catch (NullPointerException e) {
+                }
 
             }
         });

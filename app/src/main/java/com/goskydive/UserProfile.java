@@ -62,13 +62,17 @@ public class UserProfile extends AppCompatActivity {
         totalJumpsReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot jumpNumberReferenceSnapshot, @Nullable FirebaseFirestoreException error) {
-                long jumpNo = jumpNumberReferenceSnapshot.getLong("allJumps");
-                textview.setText(String.valueOf(jumpNo));
+                try {
+                    long jumpNo = jumpNumberReferenceSnapshot.getLong("allJumps");
+                    textview.setText(String.valueOf(jumpNo));
+                } catch (NullPointerException e) {
+                }
 
             }
         });
 
     }
+
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(), Login.class));

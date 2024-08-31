@@ -31,7 +31,8 @@ public class Step2 extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userID;
     String howManyJumpsToInteger;
-    Integer howManyUserJumps = 0;
+    int zeroJumps = 0;
+    Integer howManyUserJumps = zeroJumps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,22 +56,22 @@ public class Step2 extends AppCompatActivity {
                     howManyJumpsToInteger = howManyJumps.getText().toString();
                     howManyUserJumps = Integer.parseInt(howManyJumpsToInteger);
 
-                        //storing data to firestore
-                        userID = fAuth.getCurrentUser().getUid();
+                    //storing data to firestore
+                    userID = fAuth.getCurrentUser().getUid();
                     DocumentReference documentReference = fStore.collection("allJumps").document(userID);
 
                     Map<String, Object> allJumps = new HashMap<>();
-                        allJumps.put("allJumps", howManyUserJumps);
+                    allJumps.put("allJumps", howManyUserJumps);
 
 
-                        documentReference.set(allJumps).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            public static final String TAG = "TAG";
+                    documentReference.set(allJumps).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        public static final String TAG = "TAG";
 
-                            @Override
-                            public void onSuccess(Void unused) {
-                           Log.d(TAG, "Jumps added");
-                            }
-                        });
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Log.d(TAG, "Jumps added");
+                        }
+                    });
 
                 }
                 //next activity link
