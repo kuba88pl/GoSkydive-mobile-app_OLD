@@ -87,7 +87,7 @@ public class Step3 extends AppCompatActivity {
                     documentReference.set(licenceType).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Log.d(TAG, "Licence was stored!");
+                            Log.d(TAG, "Licence type updated!");
                         }
                     });
 
