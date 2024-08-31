@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/add_jump"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
         android:id="@+id/freefall_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Freefall time"
@@ -151,11 +151,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heigh_seekbar" />
 
+    <Spinner
+        android:id="@+id/set_plane_spinner"
+        android:layout_width="248dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="536dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/plane_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="528dp"
+        android:layout_marginTop="544dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Plane"
@@ -192,16 +202,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/height_text" />
 
-    <Spinner
-        android:id="@+id/set_plane_spinner"
-        android:layout_width="248dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="520dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/seekbar_result"
         android:layout_width="wrap_content"
@@ -212,6 +212,7 @@
         android:textStyle="italic|bold"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:text="800 meters AGL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

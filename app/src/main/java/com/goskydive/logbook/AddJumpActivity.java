@@ -2,7 +2,10 @@ package com.goskydive.logbook;
 
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -11,6 +14,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -18,17 +22,23 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import com.google.firebase.firestore.QuerySnapshot;
 import com.goskydive.R;
+import com.goskydive.jump.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddJumpActivity extends AppCompatActivity {
 
+    public static final String TAG = "TAG";
     TextView jumpNumber, editTextDate, seekBarResult;
     Spinner chooseJumpType, setPlane;
     SeekBar highSeekBar;
+    ImageButton addJumpToFireStore;
 
 
     FirebaseAuth fAuth;
@@ -43,6 +53,7 @@ public class AddJumpActivity extends AppCompatActivity {
     String todayDateToString = todayDate.format(date);
 
     int[] seekBarHighValues = {800, 1000, 1200, 1500, 2000, 2500, 3000, 3500, 4000, 4500};
+    Jump nextJump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +67,7 @@ public class AddJumpActivity extends AppCompatActivity {
         chooseJumpType = findViewById(R.id.spinner_jump_type);
         setPlane = findViewById(R.id.set_plane_spinner);
         seekBarResult = findViewById(R.id.seekbar_result);
-
+        addJumpToFireStore = findViewById(R.id.add_jump);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -126,7 +137,7 @@ public class AddJumpActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 seekBarResult.setText(progress + " meters AGL");
-                //progress trzeba zapisac do drugiej zmiennej ktora bedzie przekazana do bazy
+
                 userJumpValue = Long.valueOf(progress);
             }
 
@@ -142,6 +153,50 @@ public class AddJumpActivity extends AppCompatActivity {
 
         });
 
+        addJumpToFireStore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // creating jump object and adding it to firestore
+
+                Jump jump = new Jump(
+                        nextJumpPlusOne,
+                        todayDateToString,
+                        chooseJumpType.getSelectedItem().toString(),
+                        "Crossfire 139",
+                        setPlane.getSelectedItem().toString(),
+                        "Gliwice",
+                        userJumpValue,
+                        50);
+
+                Map<String, Jump> addNextJump = new HashMap<>();
+                addNextJump.put("nextJump", jump);
+
+
+                DocumentReference addNextJumpReference = fStore.collection("userJumpsLogBook").document(userId);
+                addNextJumpReference.set(addNextJump).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d(TAG, "jump added");
+                    }
+                });
+
+                DocumentReference updateJumpNumber = fStore.collection("allJumps").document(userId);
+
+                Map<String, Object> allJumps = new HashMap<>();
+                allJumps.put("allJumps", nextJumpPlusOne);
+
+
+                updateJumpNumber.set(allJumps).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    public static final String TAG = "TAG";
+
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d(TAG, "All jumps updated");
+                    }
+                });
+                    }
+        });
 
     }
 }
