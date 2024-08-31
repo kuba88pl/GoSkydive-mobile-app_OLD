@@ -45,6 +45,8 @@ public class Step2 extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
+        howManyJumps.setText(String.valueOf(0));
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
