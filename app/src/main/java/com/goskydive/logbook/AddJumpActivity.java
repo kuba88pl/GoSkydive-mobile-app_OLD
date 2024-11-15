@@ -22,8 +22,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.SetOptions;
 import com.goskydive.R;
 import com.goskydive.jump.*;
 
@@ -40,7 +38,6 @@ public class AddJumpActivity extends AppCompatActivity {
     Spinner chooseJumpType, setPlane;
     SeekBar highSeekBar;
     ImageButton addJumpToFireStore;
-
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -131,7 +128,6 @@ public class AddJumpActivity extends AppCompatActivity {
         gradientDrawable.setCornerRadius(10);
         highSeekBar.setProgressDrawable(gradientDrawable);
 
-
         highSeekBar.setMax(4500);
         highSeekBar.setMin(800);
         highSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -170,7 +166,6 @@ public class AddJumpActivity extends AppCompatActivity {
                         userJumpValue,
                         50);
 
-
                 DocumentReference addNextJumpReference = fStore.collection("userJumpsLogBook").document(userId).collection("jumps").document();
                 Map<String, Jump> addNextJump = new HashMap<>();
                 addNextJump.put("nextJump", jump);
@@ -187,7 +182,6 @@ public class AddJumpActivity extends AppCompatActivity {
                 Map<String, Object> allJumps = new HashMap<>();
                 allJumps.put("allJumps", nextJumpPlusOne);
 
-
                 updateJumpNumber.set(allJumps).addOnSuccessListener(new OnSuccessListener<Void>() {
                     public static final String TAG = "TAG";
 
@@ -196,7 +190,7 @@ public class AddJumpActivity extends AppCompatActivity {
                         Log.d(TAG, "All jumps updated");
                     }
                 });
-                    }
+            }
         });
 
     }
