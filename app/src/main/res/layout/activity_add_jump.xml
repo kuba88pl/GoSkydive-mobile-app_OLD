@@ -10,9 +10,9 @@
 
     <TextView
         android:id="@+id/jump_number_number"
-        android:layout_width="255dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="152dp"
+        android:layout_width="261dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="132dp"
         android:fontFamily="sans-serif-black"
         android:inputType="number"
         android:paddingStart="10dp"
@@ -22,7 +22,6 @@
         android:textSize="40sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,11 +33,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/circle_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/baseline_add_64" />
 
@@ -83,12 +82,12 @@
         android:id="@+id/editTextDate"
         android:layout_width="136dp"
         android:layout_height="41dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="192dp"
         android:ems="10"
         android:inputType="date"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintHorizontal_bias="0.709"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,7 +95,7 @@
         android:id="@+id/date_of_jump_text"
         android:layout_width="45dp"
         android:layout_height="26dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="192dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="on"
@@ -104,7 +103,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintHorizontal_bias="0.319"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,19 +112,17 @@
         android:id="@+id/spinner_jump_type"
         android:layout_width="172dp"
         android:layout_height="39dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toEndOf="@+id/jump_style"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
-
 
     <TextView
         android:id="@+id/height_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="300dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="From a heigh"
@@ -140,7 +137,7 @@
         android:id="@+id/freefall_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Freefall time"
@@ -155,87 +152,99 @@
         android:id="@+id/canopy_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Canopy"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plane_text" />
 
     <TextView
-        android:id="@+id/canopy_text"
+        android:id="@+id/dropzone_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
-        android:text="Canopy"
+        android:text="Dropzone"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plane_text" />
+        app:layout_constraintTop_toBottomOf="@+id/canopy_text" />
 
     <Spinner
         android:id="@+id/set_plane_spinner"
         android:layout_width="248dp"
         android:layout_height="47dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toEndOf="@+id/plane_text"
+        app:layout_constraintTop_toBottomOf="@+id/freefall_time_result" />
 
     <Spinner
         android:id="@+id/set_canopy_spinner"
         android:layout_width="248dp"
         android:layout_height="47dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toEndOf="@+id/canopy_text"
         app:layout_constraintTop_toBottomOf="@+id/set_plane_spinner" />
+
+    <Spinner
+        android:id="@+id/set_dropzone_spinner"
+        android:layout_width="248dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toEndOf="@+id/dropzone_text"
+        app:layout_constraintTop_toBottomOf="@+id/set_canopy_spinner"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/plane_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="588dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Plane"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/freefall_text" />
 
     <TextView
         android:id="@+id/jump_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="sans-serif-black"
         android:paddingStart="10dp"
         android:text="Jump style"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/date_of_jump_text" />
 
     <SeekBar
         android:id="@+id/heigh_seekbar"
         style="@style/Widget.AppCompat.SeekBar"
         android:layout_width="335dp"
         android:layout_height="44dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/seekbar_background"
         android:max="10"
         app:layout_constraintEnd_toEndOf="parent"
@@ -257,23 +266,22 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/height_text"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.545" />
 
     <TextView
         android:id="@+id/freefall_time_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:text="0 seconds"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="italic|bold"
-        app:layout_constraintBottom_toTopOf="@+id/set_plane_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toEndOf="@+id/freefall_text"
-        app:layout_constraintTop_toBottomOf="@+id/heigh_seekbar"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintTop_toBottomOf="@+id/heigh_seekbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

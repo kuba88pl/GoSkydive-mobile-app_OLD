@@ -35,7 +35,7 @@ public class AddJumpActivity extends AppCompatActivity {
 
     public static final String TAG = "TAG";
     TextView jumpNumber, editTextDate, seekBarResult, freeFallTimeResult;
-    Spinner chooseJumpType, setPlane, setCanopy;
+    Spinner chooseJumpType, setPlane, setCanopy, setDropzone;
     SeekBar heighSeekBar;
     ImageButton addJumpToFireStore;
 
@@ -65,6 +65,7 @@ public class AddJumpActivity extends AppCompatActivity {
         chooseJumpType = findViewById(R.id.spinner_jump_type);
         setPlane = findViewById(R.id.set_plane_spinner);
         setCanopy = findViewById(R.id.set_canopy_spinner);
+        setDropzone = findViewById(R.id.set_dropzone_spinner);
         seekBarResult = findViewById(R.id.seekbar_result);
         addJumpToFireStore = findViewById(R.id.add_jump);
         freeFallTimeResult = findViewById(R.id.freefall_time_result);
@@ -132,6 +133,21 @@ public class AddJumpActivity extends AppCompatActivity {
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             setCanopy.setAdapter(adapter);
+
+        });
+
+        //spinner dropzone
+
+        fStore.collection("dropzones").get().addOnSuccessListener(result -> {
+            ArrayList<String> items = new ArrayList<>();
+            for (DocumentSnapshot snapshot : result) {
+                String item = snapshot.getString("dropzone");
+                items.add(item);
+            }
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            setDropzone.setAdapter(adapter);
 
         });
 
