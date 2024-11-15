@@ -204,7 +204,7 @@ public class AddJumpActivity extends AppCompatActivity {
                         chooseJumpType.getSelectedItem().toString(),
                         setCanopy.getSelectedItem().toString(),
                         setPlane.getSelectedItem().toString(),
-                        "Gliwice",
+                        setDropzone.getSelectedItem().toString(),
                         userJumpValue,
                         50);
 
