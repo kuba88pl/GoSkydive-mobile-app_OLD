@@ -14,11 +14,12 @@ public class Jump {
     private String jumpType;
     private String usedCanopy;
     private String usedPlane;
-    private String city;
+// private String city; - the previous version before refactor
+    private String dropzone;
     private long jumpHeight;
     private long freeFallDelay;
 
-    public Jump(long jumpNumber, String date, String jumpType, String usedCanopy, String usedPlane, String city, long jumpHeight, long freeFallDelay) {
+    public Jump(long jumpNumber, String date, String jumpType, String usedCanopy, String usedPlane, String dropzone, long jumpHeight, long freeFallDelay) {
         this.jumpNumber = jumpNumber;
         this.date = date;
         this.jumpType = jumpType;
@@ -26,7 +27,7 @@ public class Jump {
         Plane plane = new Plane();
         //TODO type plane form database in addJumpActivity;
         this.usedPlane = usedPlane;
-        this.city = city;
+        this.dropzone = dropzone;
         this.jumpHeight = jumpHeight;
         this.freeFallDelay = freeFallDelay;
     }
@@ -75,12 +76,12 @@ public class Jump {
         this.usedPlane = usedPlane;
     }
 
-    public String getCity() {
-        return city;
+    public String getDropzone() {
+        return dropzone;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setDropzone(String dropzone) {
+        this.dropzone = dropzone;
     }
 
     public long getJumpHeight() {
@@ -106,11 +107,11 @@ public class Jump {
         Jump jump = (Jump) o;
         return jumpNumber == jump.jumpNumber && jumpHeight == jump.jumpHeight && freeFallDelay
                 == jump.freeFallDelay && Objects.equals(date, jump.date) && Objects.equals(jumpType, jump.jumpType)
-                && Objects.equals(usedCanopy, jump.usedCanopy) && Objects.equals(usedPlane, jump.usedPlane) && Objects.equals(city, jump.city);
+                && Objects.equals(usedCanopy, jump.usedCanopy) && Objects.equals(usedPlane, jump.usedPlane) && Objects.equals(dropzone, jump.dropzone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jumpNumber, date, jumpType, usedCanopy, usedPlane, city, jumpHeight, freeFallDelay);
+        return Objects.hash(jumpNumber, date, jumpType, usedCanopy, usedPlane, dropzone, jumpHeight, freeFallDelay);
     }
 }
