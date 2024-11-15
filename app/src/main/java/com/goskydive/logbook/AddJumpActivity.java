@@ -35,7 +35,7 @@ public class AddJumpActivity extends AppCompatActivity {
 
     public static final String TAG = "TAG";
     TextView jumpNumber, editTextDate, seekBarResult;
-    Spinner chooseJumpType, setPlane;
+    Spinner chooseJumpType, setPlane, setCanopy;
     SeekBar highSeekBar;
     ImageButton addJumpToFireStore;
 
@@ -64,6 +64,7 @@ public class AddJumpActivity extends AppCompatActivity {
         highSeekBar = findViewById(R.id.heigh_seekbar);
         chooseJumpType = findViewById(R.id.spinner_jump_type);
         setPlane = findViewById(R.id.set_plane_spinner);
+        setCanopy = findViewById(R.id.set_canopy_spinner);
         seekBarResult = findViewById(R.id.seekbar_result);
         addJumpToFireStore = findViewById(R.id.add_jump);
 
@@ -118,6 +119,21 @@ public class AddJumpActivity extends AppCompatActivity {
 
         });
 
+        //spinner canopy
+
+        fStore.collection("canopies").get().addOnSuccessListener(result -> {
+            ArrayList<String> items = new ArrayList<>();
+            for (DocumentSnapshot snapshot : result) {
+                String item = snapshot.getString("canopy");
+                items.add(item);
+            }
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            setCanopy.setAdapter(adapter);
+
+        });
+
         //seekbar high
 
         GradientDrawable gradientDrawable = new GradientDrawable(
@@ -155,12 +171,13 @@ public class AddJumpActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // creating jump object and adding it to firestore to userJumpsLogBook -> jumps collection
-
+                //TODO
+                //need to load data to create new jump form firestore
                 Jump jump = new Jump(
                         nextJumpPlusOne,
                         todayDateToString,
                         chooseJumpType.getSelectedItem().toString(),
-                        "Crossfire 139",
+                        setCanopy.getSelectedItem().toString(),
                         setPlane.getSelectedItem().toString(),
                         "Gliwice",
                         userJumpValue,
