@@ -34,9 +34,9 @@ import java.util.Map;
 public class AddJumpActivity extends AppCompatActivity {
 
     public static final String TAG = "TAG";
-    TextView jumpNumber, editTextDate, seekBarResult;
+    TextView jumpNumber, editTextDate, seekBarResult, freeFallTimeResult;
     Spinner chooseJumpType, setPlane, setCanopy;
-    SeekBar highSeekBar;
+    SeekBar heighSeekBar;
     ImageButton addJumpToFireStore;
 
     FirebaseAuth fAuth;
@@ -61,12 +61,13 @@ public class AddJumpActivity extends AppCompatActivity {
 
         jumpNumber = findViewById(R.id.jump_number_number);
         editTextDate = findViewById(R.id.editTextDate);
-        highSeekBar = findViewById(R.id.heigh_seekbar);
+        heighSeekBar = findViewById(R.id.heigh_seekbar);
         chooseJumpType = findViewById(R.id.spinner_jump_type);
         setPlane = findViewById(R.id.set_plane_spinner);
         setCanopy = findViewById(R.id.set_canopy_spinner);
         seekBarResult = findViewById(R.id.seekbar_result);
         addJumpToFireStore = findViewById(R.id.add_jump);
+        freeFallTimeResult = findViewById(R.id.freefall_time_result);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -142,16 +143,24 @@ public class AddJumpActivity extends AppCompatActivity {
                         R.color.light_green_seek_bar, R.color.green_seek_bar,
                 });
         gradientDrawable.setCornerRadius(10);
-        highSeekBar.setProgressDrawable(gradientDrawable);
+        heighSeekBar.setProgressDrawable(gradientDrawable);
 
-        highSeekBar.setMax(4500);
-        highSeekBar.setMin(800);
-        highSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        heighSeekBar.setMax(4500);
+        heighSeekBar.setMin(800);
+        heighSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 seekBarResult.setText(progress + " meters AGL");
 
                 userJumpValue = Long.valueOf(progress);
+
+                //calculating freefall time
+
+                int gravityAcceeration = 10;
+                int freeFallTime = (int) Math.sqrt(2 * progress / gravityAcceeration);
+                if (seekBarResult.getHeight() != 0) {
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
             }
 
             @Override
@@ -183,7 +192,8 @@ public class AddJumpActivity extends AppCompatActivity {
                         userJumpValue,
                         50);
 
-                DocumentReference addNextJumpReference = fStore.collection("userJumpsLogBook").document(userId).collection("jumps").document();
+                DocumentReference addNextJumpReference = fStore.collection("userJumpsLogBook")
+                        .document(userId).collection("jumps").document();
                 Map<String, Jump> addNextJump = new HashMap<>();
                 addNextJump.put("nextJump", jump);
                 addNextJumpReference.set(addNextJump).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -209,6 +219,7 @@ public class AddJumpActivity extends AppCompatActivity {
                 });
             }
         });
+
 
     }
 }
