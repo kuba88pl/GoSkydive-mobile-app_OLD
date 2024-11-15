@@ -220,7 +220,6 @@ public class AddJumpActivity extends AppCompatActivity {
             }
         });
 
-
     }
 }
 
