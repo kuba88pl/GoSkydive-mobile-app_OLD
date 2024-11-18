@@ -14,10 +14,9 @@ public class Jump {
     private String jumpType;
     private String usedCanopy;
     private String usedPlane;
-// private String city; - the previous version before refactor
     private String dropzone;
     private long jumpHeight;
-    private long freeFallDelay;
+    public long freeFallDelay;
 
     public Jump(long jumpNumber, String date, String jumpType, String usedCanopy, String usedPlane, String dropzone, long jumpHeight, long freeFallDelay) {
         this.jumpNumber = jumpNumber;
@@ -31,10 +30,6 @@ public class Jump {
         this.jumpHeight = jumpHeight;
         this.freeFallDelay = freeFallDelay;
     }
-
-
-    //    public Jump() {
-//    }
 
     public long getJumpNumber() {
         return jumpNumber;

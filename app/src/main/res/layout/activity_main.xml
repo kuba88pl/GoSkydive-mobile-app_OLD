@@ -45,13 +45,27 @@
 
     <ImageButton
         android:id="@+id/person_link_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="66dp"
-        android:layout_marginBottom="355dp"
+        android:layout_width="123dp"
+        android:layout_height="108dp"
         app:layout_constraintBottom_toTopOf="@+id/add_jump"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/baseline_person_24" />
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.318"
+        app:srcCompat="@drawable/baseline_face_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="120dp"
+        android:layout_height="108dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_jump"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.318"
+        app:srcCompat="@drawable/baseline_menu_book_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

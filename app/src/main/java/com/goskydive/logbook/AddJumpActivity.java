@@ -45,7 +45,7 @@ public class AddJumpActivity extends AppCompatActivity {
 
     long nextJumpPlusOne;
     long userJumpValue;
-
+    long freeFallTime;
     Date date = new Date();
     SimpleDateFormat todayDate = new SimpleDateFormat("dd.MM.yyyy");
     String todayDateToString = todayDate.format(date);
@@ -161,7 +161,7 @@ public class AddJumpActivity extends AppCompatActivity {
         gradientDrawable.setCornerRadius(10);
         heighSeekBar.setProgressDrawable(gradientDrawable);
 
-        heighSeekBar.setMax(4500);
+        heighSeekBar.setMax(4000);
         heighSeekBar.setMin(800);
         heighSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -172,9 +172,52 @@ public class AddJumpActivity extends AppCompatActivity {
 
                 //calculating freefall time
 
-                int gravityAcceeration = 10;
-                int freeFallTime = (int) Math.sqrt(2 * progress / gravityAcceeration);
-                if (seekBarResult.getHeight() != 0) {
+              if(heighSeekBar.getProgress() >= 800) {
+                  freeFallTime = 5;
+                  freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 1100) {
+                    freeFallTime = 10;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 1300) {
+                    freeFallTime = 15;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 1600) {
+                    freeFallTime = 20;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 2100) {
+                    freeFallTime = 25;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 2300) {
+                    freeFallTime = 30;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 2600) {
+                    freeFallTime = 35;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 2800) {
+                    freeFallTime = 40;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 3100) {
+                    freeFallTime = 45;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 3300) {
+                    freeFallTime = 50;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 3600) {
+                    freeFallTime = 55;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
+                }
+                if(heighSeekBar.getProgress() >= 4000) {
+                    freeFallTime = 60;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
             }
@@ -206,7 +249,7 @@ public class AddJumpActivity extends AppCompatActivity {
                         setPlane.getSelectedItem().toString(),
                         setDropzone.getSelectedItem().toString(),
                         userJumpValue,
-                        50);
+                        freeFallTime);
 
                 DocumentReference addNextJumpReference = fStore.collection("userJumpsLogBook")
                         .document(userId).collection("jumps").document();
