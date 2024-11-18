@@ -153,4 +153,28 @@
         app:layout_constraintStart_toEndOf="@+id/total_jumps"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/butreset_password_button"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:text="Reset pasword"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="612dp" />
+
+    <Button
+        android:id="@+id/change_profile_button"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:text="Change profile"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="555dp" />
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="669dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
