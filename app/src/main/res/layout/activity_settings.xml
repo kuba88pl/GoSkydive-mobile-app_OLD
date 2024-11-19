@@ -5,6 +5,53 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary_color"
     tools:context=".Settings">
+
+    <ImageView
+        android:id="@+id/signUpLogo"
+        android:layout_width="143dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_menu_64" />
+
+    <Switch
+        android:id="@+id/feet_or_meters_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feet / meters"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <Switch
+        android:id="@+id/schow_email_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show your email address"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="391dp" />
+
+    <TextView
+        android:id="@+id/privacy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="356dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

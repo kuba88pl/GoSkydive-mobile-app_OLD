@@ -172,51 +172,51 @@ public class AddJumpActivity extends AppCompatActivity {
 
                 //calculating freefall time
 
-              if(heighSeekBar.getProgress() >= 800) {
-                  freeFallTime = 5;
-                  freeFallTimeResult.setText(freeFallTime + " seconds");
+                if (heighSeekBar.getProgress() >= 800) {
+                    freeFallTime = 5;
+                    freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 1100) {
+                if (heighSeekBar.getProgress() >= 1100) {
                     freeFallTime = 10;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 1300) {
+                if (heighSeekBar.getProgress() >= 1300) {
                     freeFallTime = 15;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 1600) {
+                if (heighSeekBar.getProgress() >= 1600) {
                     freeFallTime = 20;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 2100) {
+                if (heighSeekBar.getProgress() >= 2100) {
                     freeFallTime = 25;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 2300) {
+                if (heighSeekBar.getProgress() >= 2300) {
                     freeFallTime = 30;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 2600) {
+                if (heighSeekBar.getProgress() >= 2600) {
                     freeFallTime = 35;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 2800) {
+                if (heighSeekBar.getProgress() >= 2800) {
                     freeFallTime = 40;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 3100) {
+                if (heighSeekBar.getProgress() >= 3100) {
                     freeFallTime = 45;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 3300) {
+                if (heighSeekBar.getProgress() >= 3300) {
                     freeFallTime = 50;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 3600) {
+                if (heighSeekBar.getProgress() >= 3600) {
                     freeFallTime = 55;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
-                if(heighSeekBar.getProgress() >= 4000) {
+                if (heighSeekBar.getProgress() >= 4000) {
                     freeFallTime = 60;
                     freeFallTimeResult.setText(freeFallTime + " seconds");
                 }
@@ -239,8 +239,6 @@ public class AddJumpActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 // creating jump object and adding it to firestore to userJumpsLogBook -> jumps collection
-                //TODO
-                //need to load data to create new jump form firestore
                 Jump jump = new Jump(
                         nextJumpPlusOne,
                         todayDateToString,
