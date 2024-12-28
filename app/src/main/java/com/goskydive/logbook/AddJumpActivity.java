@@ -1,11 +1,13 @@
 package com.goskydive.logbook;
 
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import com.goskydive.MainActivity;
 import com.goskydive.R;
 import com.goskydive.jump.*;
 
@@ -38,6 +41,7 @@ public class AddJumpActivity extends AppCompatActivity {
     Spinner chooseJumpType, setPlane, setCanopy, setDropzone;
     SeekBar heighSeekBar;
     ImageButton addJumpToFireStore;
+    ImageView logoLink;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -69,12 +73,20 @@ public class AddJumpActivity extends AppCompatActivity {
         seekBarResult = findViewById(R.id.seekbar_result);
         addJumpToFireStore = findViewById(R.id.add_jump);
         freeFallTimeResult = findViewById(R.id.freefall_time_result);
+        logoLink = findViewById(R.id.signUpLogo);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userId = fAuth.getCurrentUser().getUid();
 
         editTextDate.setText(todayDateToString);
+
+        logoLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
         DocumentReference totalJumpsReference = fStore.collection("allJumps").document(userId);
         totalJumpsReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
