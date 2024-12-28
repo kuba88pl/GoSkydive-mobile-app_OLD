@@ -19,4 +19,6 @@
     <string name="iam_student">I am student</string>
     <string name="choose_dropzone_text">Choose a drop zone where you jump most often. This will make it easier to provide weather data for you!</string>
     <string name="thats_all">Thank you for your time! You can now use GoSkydive! Happy safe jumping!</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

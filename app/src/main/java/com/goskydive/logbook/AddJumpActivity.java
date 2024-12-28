@@ -24,7 +24,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-import com.goskydive.MainActivity;
+import com.goskydive.MainActivityOld;
 import com.goskydive.R;
 import com.goskydive.jump.*;
 
@@ -84,7 +84,7 @@ public class AddJumpActivity extends AppCompatActivity {
         logoLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivityOld.class));
             }
         });
 

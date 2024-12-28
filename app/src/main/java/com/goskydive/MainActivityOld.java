@@ -6,14 +6,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-
-import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,15 +18,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.goskydive.logbook.AddJumpActivity;
 
-
-public class MainActivity extends AppCompatActivity {
-    Toolbar toolbar;
-    NavigationView navigationView;
-    DrawerLayout drawerLayout;
-
+public class MainActivityOld extends AppCompatActivity {
     ImageView addJumpButton;
     ImageView skydiveWithFriendsButton;
     ImageView profileIconButton;
+    ImageView logoLink;
     TextView jumpNumberText;
 
     FirebaseAuth fAuth;
@@ -41,21 +33,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_drawer);
-
-        toolbar = findViewById(R.id.toolbar);
-        navigationView = findViewById(R.id.navigation_view);
-        drawerLayout = findViewById(R.id.drawerLayout);
-
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.open, R.string.close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
-        toggle.syncState();
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_test);
 
         addJumpButton = findViewById(R.id.addjumpbutton);
         profileIconButton = findViewById(R.id.profileIcon);
         jumpNumberText = findViewById(R.id.jumpsNumberText);
+        logoLink = findViewById(R.id.signUpLogo);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -76,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        logoLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivityOld.class));
+            }
+        });
 
         DocumentReference totalJumpsReference = fStore.collection("allJumps").document(userId);
         totalJumpsReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -89,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 }
