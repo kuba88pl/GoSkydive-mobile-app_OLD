@@ -2,14 +2,17 @@ package com.goskydive;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
@@ -21,6 +24,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.goskydive.logbook.AddJumpActivity;
+import com.goskydive.logbook.LogBook;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -52,6 +56,49 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
         toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.nav_logbok) {
+                    Intent intent = new Intent(getApplicationContext(), LogBook.class);
+                    startActivity(intent);
+                }
+                if (item.getItemId() == R.id.nav_messages) {
+                    Intent intent = new Intent(getApplicationContext(), Messages.class);
+                    startActivity(intent);
+                }
+                if (item.getItemId() == R.id.nav_friends) {
+                    Intent intent = new Intent(getApplicationContext(), Friends.class);
+                    startActivity(intent);
+                }
+                if (item.getItemId() == R.id.nav_weather) {
+                    Intent intent = new Intent(getApplicationContext(), Weather.class);
+                    startActivity(intent);
+                }
+                if (item.getItemId() == R.id.nav_alerts) {
+                    Intent intent = new Intent(getApplicationContext(), Alerts.class);
+                    startActivity(intent);
+                }
+                if (item.getItemId() == R.id.nav_settings) {
+                    Intent intent = new Intent(getApplicationContext(), Settings.class);
+                    startActivity(intent);
+                }
+                if (item.getItemId() == R.id.nav_logbok) {
+                    Intent intent = new Intent(getApplicationContext(), LogBook.class);
+                    startActivity(intent);
+                }
+                if (item.getItemId() == R.id.nav_logout) {
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                    FirebaseAuth.getInstance().signOut();
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+
+
+                return true;
+            }
+        });
 
         addJumpButton = findViewById(R.id.addjumpbutton);
         profileIconButton = findViewById(R.id.profileIcon);
@@ -92,4 +139,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+        moveTaskToBack(true);
+
+    }
+
 }

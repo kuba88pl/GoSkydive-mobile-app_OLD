@@ -16,6 +16,18 @@
         android:theme="@style/Theme.GoSkydive"
         tools:targetApi="31">
         <activity
+            android:name=".Alerts"
+            android:exported="false" />
+        <activity
+            android:name=".Weather"
+            android:exported="false" />
+        <activity
+            android:name=".Friends"
+            android:exported="false" />
+        <activity
+            android:name=".Messages"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
@@ -37,7 +49,7 @@
             android:name=".logbook.AddJumpActivity"
             android:exported="false" />
         <activity
-            android:name=".logbook.loogBook"
+            android:name=".logbook.LogBook"
             android:exported="false" />
         <activity
             android:name=".introduction.Step6"
