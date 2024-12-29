@@ -15,7 +15,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,21 +25,18 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.goskydive.logbook.AddJumpActivity;
 import com.goskydive.logbook.LogBook;
 
-
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
 
-    ImageView addJumpButton;
-    ImageView skydiveWithFriendsButton;
-    ImageView profileIconButton;
+
+    ImageView addJumpButton, skydiveWithFriendsButton, profileIconButton;
     TextView jumpNumberText;
 
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation_view);
         drawerLayout = findViewById(R.id.drawerLayout);
 
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
@@ -60,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.nav_home) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
                 if (item.getItemId() == R.id.nav_logbok) {
                     Intent intent = new Intent(getApplicationContext(), LogBook.class);
                     startActivity(intent);
@@ -94,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
-
-
                 return true;
             }
         });
@@ -123,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         DocumentReference totalJumpsReference = fStore.collection("allJumps").document(userId);
         totalJumpsReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -136,8 +132,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     @Override
@@ -148,7 +142,5 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
         moveTaskToBack(true);
-
     }
-
 }

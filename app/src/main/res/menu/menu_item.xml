@@ -6,6 +6,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="Home" />
+        <item
             android:id="@+id/nav_logbok"
             android:icon="@drawable/jump_list_24"
             android:title="LogBook" />
